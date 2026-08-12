@@ -1,0 +1,53 @@
+{{ define "main" }}
+
+<div class="w-full md:w-3/4 lg:w-1/2 mx-auto px-4 py-12">
+
+    <h1 class="text-5xl font-bold mb-12 text-text-primary-light dark:text-text-primary-dark">
+        {{ .Title }}
+    </h1>
+
+    <div class="space-y-12 max-w-3xl mx-auto">
+
+        {{ range where .RegularPages "Language.Lang" .Language.Lang }}
+
+        <div class="group">
+
+            <p class="text-text-secondary-light dark:text-text-secondary-dark text-sm mb-2">
+                {{ .Date.Format "02 Jan 2006" }}
+            </p>
+
+            <a href="{{ .RelPermalink }}" class="block">
+
+                <h3 class="text-xl font-medium text-accent-light dark:text-accent-dark hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors duration-200 mb-3">
+                    {{ .Title }}
+                </h3>
+
+            </a>
+
+            <p class="text-text-secondary-light dark:text-text-secondary-dark mb-4">
+                {{ .Summary }}
+            </p>
+
+            {{ with .Params.tags }}
+            <div class="flex flex-wrap gap-2">
+
+                {{ range . }}
+
+                <span class="px-2 py-1 text-xs bg-bg-primary-light dark:bg-bg-tertiary-dark text-text-secondary-light dark:text-text-secondary-dark border border-border-primary-light dark:border-border-primary-dark rounded-md">
+                    {{ . }}
+                </span>
+
+                {{ end }}
+
+            </div>
+            {{ end }}
+
+        </div>
+
+        {{ end }}
+
+    </div>
+
+</div>
+
+{{ end }}

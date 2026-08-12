@@ -1,0 +1,95 @@
+baseURL = "https://janbermejotoran.github.io/"
+title = "Jan Bermejo Toran"
+theme = "hugo-noir"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+
+
+# ==========================================================
+# IDIOMAS
+# ==========================================================
+
+[languages]
+
+[languages.en]
+locale = "en-US"
+label = "English"
+
+[languages.es]
+locale = "es-ES"
+label = "Español"
+
+[languages.ca]
+locale = "ca-ES"
+label = "Català"
+
+#---------------------
+
+# URL
+relativeURLs = true
+canonifyURLs = true
+
+# Taxonomías
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+# Información personal
+[params]
+name = "Jan Bermejo Toran"
+profile_image = "/images/profile.jpg"
+location = "España"
+description = "Estudiante de Grado Superior en Ciberseguridad. Enfocado en seguridad ofensiva y defensiva, Linux, desarrollo de herramientas open source, self-hosting y automatización."
+
+github = "https://github.com/JanBermejoToran"
+github_username = "JanBermejoToran"
+discord = "jan_bermejo_toran"
+email = "janbermejotoran@gmail.com"
+
+linkedin = "https://es.linkedin.com/in/jan-bermejo-toran"
+linkedin_username = "Jan Bermejo Toran"
+
+
+
+
+# a partir de esta zona puedo editar sin joder nada
+#----------------------------------
+
+
+[[params.certifications]]
+title = "Digital Awareness"
+date = "29 Jul 2026"
+institution = "Cisco Networking Academy"
+url = "/certificates/Digital_Awareness_certificate.pdf"
+
+[[params.certifications]]
+title = "Getting Started with Cisco Packet Tracer"
+date = "28 Jul 2026"
+institution = "Cisco Networking Academy"
+url = "/certificates/Getting_Started_with_Cisco_Packet_Tracer_certificate.pdf"
+
+
+
+# Navegación
+[menu]
+
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Blogs"
+    url = "/blogs/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 3
+
+  [[menu.main]]
+    name = "Contact Me"
+    url = "/contact/"
+    weight = 4

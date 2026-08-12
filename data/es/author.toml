@@ -1,0 +1,33 @@
+[[education]]
+institution = "STUCOM"
+degree = "Grado Medio en Sistemas Microinformáticos y Redes"
+period = "2024 - 2026"
+description = "Formación profesional en sistemas informáticos, redes y mantenimiento."
+
+[[education]]
+institution = "STUCOM"
+degree = "CFGS de Ciberseguridad - Administración de Sistemas Informáticos en Red"
+period = "2026 - 2028 (Cursando)"
+description = "Formación profesional de grado superior especializada en ciberseguridad y administración de sistemas informáticos en red."
+
+[[certifications]]
+title = "Digital Awareness"
+date = "29 Jul 2026"
+institution = "Cisco Networking Academy"
+url = "/certificates/Digital_Awareness_certificate.pdf"
+
+[[certifications]]
+title = "Getting Started with Cisco Packet Tracer"
+date = "28 Jul 2026"
+institution = "Cisco Networking Academy"
+url = "/certificates/Getting_Started_with_Cisco_Packet_Tracer_certificate.pdf"
+
+
+
+[[projects]]
+title = "PacketTracer-kde-Login-Fix"
+description = "Solución para los problemas de inicio de sesión de Cisco Packet Tracer en formato AppImage en Arch Linux con KDE Plasma, evitando conflictos entre las bibliotecas Qt de la aplicación y las del sistema."
+tech = "Bash, Packet Tracer"
+image = "/images/projects/kdevspt.png"
+link = "https://github.com/JanBermejoToran/PacketTracer-kde-Login-Fix"
+

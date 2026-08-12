@@ -1,0 +1,211 @@
+{{ define "main" }}
+
+<div class="w-full md:w-4/5 lg:w-3/5 mx-auto px-6 md:px-0 py-12">
+
+    <h1 class="text-4xl font-bold mb-10">
+        {{ .Title }}
+    </h1>
+
+    <div class="projects-list">
+
+        {{ $projectsData := index site.Data .Language.Lang "projects" }}
+        {{ $projects := cond (and $projectsData $projectsData.projects) $projectsData.projects site.Params.projects }}
+
+        {{ range $projects }}
+
+        <article class="project-card">
+
+            <a href="{{ .link }}"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="project-link">
+
+                <div class="project-image">
+
+                    <img
+                        src="{{ .image }}"
+                        alt="{{ .title }}"
+                        loading="lazy"
+                    >
+
+                    <div class="project-overlay"></div>
+
+                    <div class="project-content">
+
+                        <h2 class="project-title">
+                            {{ .title }}
+                        </h2>
+
+                        {{ if .tech }}
+                        <div class="project-tech">
+                            {{ range (split .tech ",") }}
+                            <span>{{ trim . " " }}</span>
+                            {{ end }}
+                        </div>
+                        {{ end }}
+
+                        {{ if .description }}
+                        <p class="project-description">
+                            {{ .description }}
+                        </p>
+                        {{ end }}
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </article>
+
+        {{ end }}
+
+    </div>
+
+</div>
+
+<style>
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.project-card {
+    width: 100%;
+}
+
+.project-link {
+    display: block;
+    text-decoration: none;
+}
+
+.project-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #121212;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.95) 0%,
+            rgba(0, 0, 0, 0.70) 35%,
+            rgba(0, 0, 0, 0.10) 75%,
+            rgba(0, 0, 0, 0) 100%
+        );
+}
+
+.project-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 28px;
+
+    color: white;
+
+    transform: translateY(0);
+    transition: transform 0.4s ease;
+}
+
+.project-title {
+    margin: 0 0 8px;
+
+    font-size: 28px;
+    line-height: 1.15;
+    font-weight: 700;
+
+    color: white;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    margin-bottom: 10px;
+}
+
+.project-tech span {
+    padding: 4px 8px;
+
+    border-radius: 5px;
+
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(6px);
+
+    font-size: 12px;
+    color: white;
+}
+
+.project-description {
+    max-width: 700px;
+
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.project-link:hover .project-image img {
+    transform: scale(1.04);
+    filter: brightness(0.85);
+}
+
+.project-link:hover .project-content {
+    transform: translateY(-6px);
+}
+
+@media (max-width: 640px) {
+
+    .project-image {
+        aspect-ratio: 16 / 10;
+    }
+
+    .project-content {
+        padding: 18px;
+    }
+
+    .project-title {
+        font-size: 21px;
+    }
+
+    .project-description {
+        display: none;
+    }
+
+    .project-tech span {
+        font-size: 10px;
+        padding: 3px 6px;
+    }
+}
+
+</style>
+
+{{ end }}

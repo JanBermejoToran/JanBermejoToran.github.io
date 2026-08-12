@@ -1,0 +1,7 @@
+[[projects]]
+title = "PacketTracer-kde-Login-Fix"
+description = "Solución para los problemas de inicio de sesión de Cisco Packet Tracer en formato AppImage en Arch Linux con KDE Plasma, evitando conflictos entre las bibliotecas Qt de la aplicación y las del sistema."
+tech = "Bash, Packet Tracer"
+image = "/images/projects/kdevspt.png"
+link = "https://github.com/JanBermejoToran/PacketTracer-kde-Login-Fix"
+
