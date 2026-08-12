@@ -1,0 +1,44 @@
+{{ define "main" }}
+
+<div class="container mx-auto px-4 py-12">
+
+    <h1 class="text-4xl font-bold mb-8 text-text-primary-light dark:text-text-primary-dark">
+        {{ .Title }}
+    </h1>
+
+    <div class="space-y-6">
+
+        {{ range site.Data.projects.projects }}
+
+        <article class="border border-border-primary-light dark:border-border-primary-dark rounded-lg p-6 bg-white dark:bg-neutral-800">
+
+            <h2 class="text-2xl font-semibold mb-2">
+                <a
+                    href="{{ .link }}"
+                    class="text-accent-light dark:text-accent-dark hover:text-text-primary-light dark:hover:text-text-primary-dark"
+                >
+                    {{ .title }}
+                </a>
+            </h2>
+
+            {{ if .description }}
+            <p class="text-text-secondary-light dark:text-text-secondary-dark">
+                {{ .description }}
+            </p>
+            {{ end }}
+
+            {{ if .tech }}
+            <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark mt-2">
+                {{ .tech }}
+            </p>
+            {{ end }}
+
+        </article>
+
+        {{ end }}
+
+    </div>
+
+</div>
+
+{{ end }}
