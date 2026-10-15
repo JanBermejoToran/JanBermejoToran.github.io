@@ -5,6 +5,20 @@
     <h1 class="text-5xl font-bold mb-12 text-text-primary-light dark:text-text-primary-dark">
         {{ .Title }}
     </h1>
+    <div class="flex flex-wrap gap-2 mb-12">
+
+    {{ range .Site.Taxonomies.tags.Alphabetical }}
+
+    <a
+        href="{{ .Page.RelPermalink }}"
+        class="px-3 py-1 text-xs bg-bg-primary-light dark:bg-bg-tertiary-dark text-text-secondary-light dark:text-text-secondary-dark border border-border-primary-light dark:border-border-primary-dark rounded-md hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors duration-200"
+    >
+        {{ .Page.LinkTitle }}
+    </a>
+
+    {{ end }}
+
+    </div>
 
     <div class="space-y-12 max-w-3xl mx-auto">
 
@@ -28,19 +42,23 @@
                 {{ .Summary }}
             </p>
 
-            {{ with .Params.tags }}
+            {{ with .GetTerms "tags" }}
             <div class="flex flex-wrap gap-2">
 
                 {{ range . }}
 
-                <span class="px-2 py-1 text-xs bg-bg-primary-light dark:bg-bg-tertiary-dark text-text-secondary-light dark:text-text-secondary-dark border border-border-primary-light dark:border-border-primary-dark rounded-md">
-                    {{ . }}
-                </span>
-
+                <a
+                    href="{{ .RelPermalink }}"
+                    class="px-2 py-1 text-xs bg-bg-primary-light dark:bg-bg-tertiary-dark text-text-secondary-light dark:text-text-secondary-dark border border-border-primary-light dark:border-border-primary-dark rounded-md hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors duration-200"
+                >
+                    {{ .LinkTitle }}
+                </a>
+            
                 {{ end }}
 
             </div>
             {{ end }}
+
 
         </div>
 

@@ -15,4 +15,4 @@ Me interesa especialmente entender las cosas desde abajo. No quedarme en *«esto
 
 Algunos artículos serán proyectos completos; otros serán pequeñas investigaciones, configuraciones o experimentos que quizá no tengan ninguna utilidad inmediata. Precisamente por eso quiero conservarlos: con el tiempo, este sitio debería convertirse en un registro de mi evolución técnica y en una referencia de las cosas que he ido descubriendo, vamos, que me sirve para llevar un registro de lo que voy haciendo.
 
-Si alguien encuentra aquí una solución a un problema que también tuvo, perfecto. Y si algo de lo que escribo resulta ser incorrecto, mejor todavía: significará que hay algo que investigar de nuevo. Cualquier cosa, podeis poneros en contacto conmigo y mirare de arreglarlo.
+Si alguien encuentra aquí una solución a un problema que también tuvo, perfecto. Y si algo de lo que escribo resulta ser incorrecto, mejor todavía: significará que hay algo que investigar de nuevo. Cualquier cosa, podéis poneros en contacto conmigo y miraré de arreglarlo.
