@@ -1,68 +1,97 @@
 {{ define "main" }}
 
-<div class="w-full md:w-3/4 lg:w-1/2 mx-auto px-4 py-12">
+<div class="max-w-6xl mx-auto px-4 py-12">
 
     <h1 class="text-5xl font-bold mb-12 text-text-primary-light dark:text-text-primary-dark">
         {{ .Title }}
     </h1>
-    <div class="flex flex-wrap gap-2 mb-12">
 
-    {{ range .Site.Taxonomies.tags.Alphabetical }}
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-10 items-start">
 
-    <a
-        href="{{ .Page.RelPermalink }}"
-        class="px-3 py-1 text-xs bg-bg-primary-light dark:bg-bg-tertiary-dark text-text-secondary-light dark:text-text-secondary-dark border border-border-primary-light dark:border-border-primary-dark rounded-md hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors duration-200"
-    >
-        {{ .Page.LinkTitle }}
-    </a>
+        <!-- Bloque lateral: Writeups -->
+        <aside class="lg:col-span-1">
 
-    {{ end }}
+            <div class="lg:sticky lg:top-8 border border-border-primary-light dark:border-border-primary-dark rounded-xl p-6 bg-white dark:bg-neutral-800">
 
-    </div>
-
-    <div class="space-y-12 max-w-3xl mx-auto">
-
-        {{ range where .RegularPages "Language.Lang" .Language.Lang }}
-
-        <div class="group">
-
-            <p class="text-text-secondary-light dark:text-text-secondary-dark text-sm mb-2">
-                {{ .Date.Format "02 Jan 2006" }}
-            </p>
-
-            <a href="{{ .RelPermalink }}" class="block">
-
-                <h3 class="text-xl font-medium text-accent-light dark:text-accent-dark hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors duration-200 mb-3">
-                    {{ .Title }}
-                </h3>
-
-            </a>
-
-            <p class="text-text-secondary-light dark:text-text-secondary-dark mb-4">
-                {{ .Summary }}
-            </p>
-
-            {{ with .GetTerms "tags" }}
-            <div class="flex flex-wrap gap-2">
-
-                {{ range . }}
+                <h2 class="text-lg font-semibold text-text-primary-light dark:text-text-primary-dark mb-3">
+                    Writeups
+                </h2>
 
                 <a
-                    href="{{ .RelPermalink }}"
-                    class="px-2 py-1 text-xs bg-bg-primary-light dark:bg-bg-tertiary-dark text-text-secondary-light dark:text-text-secondary-dark border border-border-primary-light dark:border-border-primary-dark rounded-md hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors duration-200"
+                    href="/writeups/"
+                    class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-md border border-border-primary-light dark:border-border-primary-dark text-accent-light dark:text-accent-dark hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors duration-200"
                 >
-                    {{ .LinkTitle }}
+                    Ver writeups →
                 </a>
-            
+
+            </div>
+
+        </aside>
+
+        <!-- Contenido principal -->
+        <div class="lg:col-span-3">
+
+            <div class="flex flex-wrap gap-2 mb-12">
+
+            {{ range .Site.Taxonomies.tags.Alphabetical }}
+
+            <a
+                href="{{ .Page.RelPermalink }}"
+                class="px-3 py-1 text-xs bg-bg-primary-light dark:bg-bg-tertiary-dark text-text-secondary-light dark:text-text-secondary-dark border border-border-primary-light dark:border-border-primary-dark rounded-md hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors duration-200"
+            >
+                {{ .Page.LinkTitle }}
+            </a>
+
+            {{ end }}
+
+            </div>
+
+            <div class="space-y-12">
+
+                {{ range where .RegularPages "Language.Lang" .Language.Lang }}
+
+                <div class="group">
+
+                    <p class="text-text-secondary-light dark:text-text-secondary-dark text-sm mb-2">
+                        {{ .Date.Format "02 Jan 2006" }}
+                    </p>
+
+                    <a href="{{ .RelPermalink }}" class="block">
+
+                        <h3 class="text-xl font-medium text-accent-light dark:text-accent-dark hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors duration-200 mb-3">
+                            {{ .Title }}
+                        </h3>
+
+                    </a>
+
+                    <p class="text-text-secondary-light dark:text-text-secondary-dark mb-4">
+                        {{ .Summary }}
+                    </p>
+
+                    {{ with .GetTerms "tags" }}
+                    <div class="flex flex-wrap gap-2">
+
+                        {{ range . }}
+
+                        <a
+                            href="{{ .RelPermalink }}"
+                            class="px-2 py-1 text-xs bg-bg-primary-light dark:bg-bg-tertiary-dark text-text-secondary-light dark:text-text-secondary-dark border border-border-primary-light dark:border-border-primary-dark rounded-md hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors duration-200"
+                        >
+                            {{ .LinkTitle }}
+                        </a>
+
+                        {{ end }}
+
+                    </div>
+                    {{ end }}
+
+                </div>
+
                 {{ end }}
 
             </div>
-            {{ end }}
-
 
         </div>
-
-        {{ end }}
 
     </div>
 
