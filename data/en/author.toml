@@ -27,6 +27,18 @@ institution = "Cisco Networking Academy"
 url = "/certificates/Getting_Started_with_Cisco_Packet_Tracer_certificate.pdf"
 
 
+[[certifications]]
+title = "Introduction to Greenhouse Gas Accounting for IT"
+date = "30 Oct 2026"
+institution = "Cisco Networking Academy"
+url = "/certificates/Introduction_to_Greenhouse_Gas_Accounting_for_IT_certificate.pdf"
+
+
+[[certifications]]
+title = "Operating Systems Basics"
+date = "30 Oct 2026"
+institution = "Cisco Networking Academy"
+url = "/certificates/Operating_Systems_Basics_certificate.pdf"
 
 [[projects]]
 title = "PacketTracer-kde-Login-Fix"

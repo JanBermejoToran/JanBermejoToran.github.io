@@ -58,18 +58,32 @@ linkedin_username = "Jan Bermejo Toran"
 
 
 [[params.certifications]]
-title = "Digital Awareness"
-date = "29 Jul 2026"
-institution = "Cisco Networking Academy"
-url = "/certificates/Digital_Awareness_certificate.pdf"
-
-[[params.certifications]]
 title = "Getting Started with Cisco Packet Tracer"
 date = "28 Jul 2026"
 institution = "Cisco Networking Academy"
 url = "/certificates/Getting_Started_with_Cisco_Packet_Tracer_certificate.pdf"
 
 
+[[params.certifications]]
+title = "Digital Awareness"
+date = "29 Jul 2026"
+institution = "Cisco Networking Academy"
+url = "/certificates/Digital_Awareness_certificate.pdf"
+
+
+
+[[params.certifications]]
+title = "Introduction to Greenhouse Gas Accounting for IT"
+date = "30 Oct 2026"
+institution = "Cisco Networking Academy"
+url = "/certificates/Introduction_to_Greenhouse_Gas_Accounting_for_IT_certificate.pdf"
+
+
+[[params.certifications]]
+title = "Operating Systems Basics"
+date = "30 Oct 2026"
+institution = "Cisco Networking Academy"
+url = "/certificates/Operating_Systems_Basics_certificate.pdf"
 
 # Navegación
 [menu]
