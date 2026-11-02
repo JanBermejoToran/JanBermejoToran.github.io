@@ -1,3 +1,4 @@
+
 {{ define "main" }}
 
 <div class="w-full md:w-3/4 lg:w-1/2 mx-auto px-4 py-12">
@@ -12,11 +13,10 @@
 
     <div class="space-y-12 max-w-3xl mx-auto">
 
-        {{ $writeups := .Site.GetPage "/categories/writeup" }}
+        {{ $posts := where .Site.RegularPages "Section" "blogs" }}
+        {{ $writeups := where $posts "Params.tags" "intersect" (slice "writeup") }}
 
-        {{ if $writeups }}
-
-            {{ range $writeups.Pages }}
+        {{ range sort $writeups "Date" "desc" }}
 
             <div class="group">
 
@@ -54,8 +54,6 @@
                 {{ end }}
 
             </div>
-
-            {{ end }}
 
         {{ else }}
 
