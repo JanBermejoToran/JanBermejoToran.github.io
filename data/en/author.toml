@@ -19,12 +19,14 @@ title = "Digital Awareness"
 date = "29 Jul 2026"
 institution = "Cisco Networking Academy"
 url = "/certificates/Digital_Awareness_certificate.pdf"
+category = "cisco"
 
 [[certifications]]
 title = "Getting Started with Cisco Packet Tracer"
 date = "28 Jul 2026"
 institution = "Cisco Networking Academy"
 url = "/certificates/Getting_Started_with_Cisco_Packet_Tracer_certificate.pdf"
+category = "cisco"
 
 
 [[certifications]]
@@ -32,6 +34,7 @@ title = "Introduction to Greenhouse Gas Accounting for IT"
 date = "30 Oct 2026"
 institution = "Cisco Networking Academy"
 url = "/certificates/Introduction_to_Greenhouse_Gas_Accounting_for_IT_certificate.pdf"
+category = "cisco"
 
 
 [[certifications]]
@@ -39,6 +42,15 @@ title = "Operating Systems Basics"
 date = "30 Oct 2026"
 institution = "Cisco Networking Academy"
 url = "/certificates/Operating_Systems_Basics_certificate.pdf"
+category = "cisco"
+
+[[certifications]]
+title = "Downtime THM CTF"
+date = "31 Oct 2026"
+institution = "TryHackMe"
+url = "/certificates/THM-KKFHVLG6CF.pdf"
+category = "ctf"
+
 
 [[projects]]
 title = "PacketTracer-kde-Login-Fix"
