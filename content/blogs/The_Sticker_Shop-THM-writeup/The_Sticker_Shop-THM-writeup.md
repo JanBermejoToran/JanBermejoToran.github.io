@@ -17,6 +17,8 @@ These are the characteristics of this TryHackMe machine called The Sticker Shop:
 - Difficulty: Easy
 - Category: Web
 
+Link: [Yhe Stiker Shop - TryHackMe](https://tryhackme.com/room/thestickershop)
+
 ## Challenge description
 
 Their local sticker shop has finally developed their own website. They don't have much experience with web development, so they decided to develop and host everything on the same computer they use to browse the Internet and check customer reviews. Smart move!

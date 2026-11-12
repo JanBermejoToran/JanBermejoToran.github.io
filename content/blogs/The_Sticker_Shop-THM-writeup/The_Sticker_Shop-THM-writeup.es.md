@@ -17,6 +17,8 @@ Estas son las características de esta máquina de TryHackMe llamada The Sticker
 - Dificultad: Easy
 - Categoría: Web
 
+Link: [The Stiker Shop - TryHackMe](https://tryhackme.com/room/thestickershop)
+
 ## Enunciado
 
 Su tienda local de pegatinas finalmente ha desarrollado su propia página web. No tienen demasiada experiencia con respecto al desarrollo web, por lo que decidieron desarrollar y alojar todo en la misma computadora que utilizan para navegar por Internet y mirar los comentarios de los clientes. ¡Muy inteligente!

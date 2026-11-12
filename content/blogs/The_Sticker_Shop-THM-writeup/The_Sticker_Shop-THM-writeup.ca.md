@@ -17,6 +17,8 @@ Aquestes són les característiques d'aquesta màquina de TryHackMe anomenada Th
 - Dificultat: Easy
 - Categoria: Web
 
+Link: [The Stiker Shop - TryHackMe](https://tryhackme.com/room/thestickershop)
+
 ## Enunciat
 
 La seva botiga local de pegatines finalment ha desenvolupat la seva pròpia pàgina web. No tenen gaire experiència amb el desenvolupament web, per la qual cosa van decidir desenvolupar i allotjar-ho tot al mateix ordinador que fan servir per navegar per Internet i mirar els comentaris dels clients. Molt intel·ligent!

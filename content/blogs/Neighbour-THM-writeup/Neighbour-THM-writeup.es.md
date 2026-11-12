@@ -17,6 +17,8 @@ Estas son las características de esta máquina de TryHackMe llamada Neighbour:
 - Dificultad: Easy
 - Categoría: Web
 
+Link: [Neighbour - TryHackMe](https://tryhackme.com/room/neighbour)
+
 ## Enunciado
 
 Echa un vistazo a nuestro nuevo servicio en la nube, Authentication Anywhere - ¡iniciar sesión desde cualquier lugar que desee! Los usuarios pueden introducir su nombre de usuario y contraseña, ¡para un proceso de inicio de sesión totalmente seguro! Definitivamente no podrías encontrar ningún secreto que otras personas tengan en su perfil, ¿verdad?
@@ -42,11 +44,11 @@ Okey, vemos cómo nos piden que iniciemos sesión en esta página web, pero no s
 
 ![Pista que nos da la misma página](/images/writeups/TryHackMe_imágenes/Neighbour-THM-imágenes/Captura_remarcado_Pista-Neighbour-THM.png)
 
-Así que vamos a hacerlo, ya que básicamente usar ctrl+u nos deja ver el código de la página:
+La página nos recomienda usar la cuenta de invitado, pero no dice la contraseña. Vamos a mirar el código fuente con Ctrl+U, por si hay alguna pista.
 
 ![Código de la página web](/images/writeups/TryHackMe_imágenes/Neighbour-THM-imágenes/Captura_codigo_web_Neighbour-THM.png)
 
-Ahora que nos hemos leído el código, podemos ver que tiene esta sección de aquí que pone que podemos iniciar sesión usando como usuario y contraseña: guest
+Ahora que nos hemos leído el código, podemos ver que tiene esta sección de aquí que pone que podemos iniciar sesión usando como usuario y contraseña unas credenciales que han quedado expuestas en el código.
 
 ![Captura de la sección donde sale que podemos iniciar como guest](/images/writeups/TryHackMe_imágenes/Neighbour-THM-imágenes/Captura_remarcado_codigo_guest-Neighbour-THM.png)
 
