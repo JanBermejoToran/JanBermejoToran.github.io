@@ -240,41 +240,57 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent-light dark:text-accent-dark"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                 {{ T "certificationsTitle" }}
             </h2>
-            {{ $groups := slice
-                (dict "key" "cisco" "label" "Cisco Networking Academy")
-                (dict "key" "thm" "label" "TryHackMe")
-                (dict "key" "htb" "label" "HackTheBox")
-                (dict "key" "ctf" "label" "CTF") }}
-            {{ $certs := . }}
-            <div class="space-y-10">
-                {{ range $groups }}
-                {{ $label := .label }}
-                {{ $items := where $certs "category" .key }}
-                {{ if $items }}
-                <div>
-                    <div class="flex items-center gap-4 mb-5">
-                        <h3 class="text-sm font-semibold uppercase tracking-widest text-gray-400 whitespace-nowrap">{{ $label }}</h3>
-                        <div class="flex-grow h-px bg-gray-700"></div>
-                    </div>
-                    <div class="space-y-6">
-                        {{ range $items }}
-                        <div class="pl-4 border-l-2 border-gray-700 hover:border-accent-light dark:hover:border-accent-dark transition-colors duration-300">
-                            <h4 class="text-xl font-bold flex items-center gap-2">
-                                {{ .title }}
-                                {{ if .url }}
-                                <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                </a>
-                                {{ end }}
-                            </h4>
-                            <p class="text-gray-500 text-xs uppercase tracking-wider">{{ .date }}</p>
-                        </div>
-                        {{ end }}
-                    </div>
-                </div>
-                {{ end }}
-                {{ end }}
-            </div>
+            {{ $lang := site.Language.Lang }}
+{{ $subCert := index (dict "es" "Certificaciones" "en" "Certifications" "ca" "Certificacions") $lang | default "Certifications" }}
+{{ $subMod := index (dict "es" "Módulos" "en" "Modules" "ca" "Mòduls") $lang | default "Modules" }}
+{{ $groups := slice
+    (dict "label" "Cisco Networking Academy" "subs" (slice (dict "key" "cisco" "label" "")))
+    (dict "label" "TryHackMe" "subs" (slice (dict "key" "thm" "label" $subCert) (dict "key" "thm-modules" "label" $subMod)))
+    (dict "label" "HackTheBox" "subs" (slice (dict "key" "htb" "label" "")))
+    (dict "label" "CTF" "subs" (slice (dict "key" "ctf" "label" ""))) }}
+{{ $certs := . }}
+<div class="space-y-10">
+{{ range $groups }}
+{{ $label := .label }}
+{{ $subs := .subs }}
+{{ $has := false }}
+{{ range $subs }}{{ if where $certs "category" .key }}{{ $has = true }}{{ end }}{{ end }}
+{{ if $has }}
+<div>
+    <div class="flex items-center gap-4 mb-4">
+        <h3 class="text-sm font-semibold uppercase tracking-widest text-text-secondary-light dark:text-text-secondary-dark whitespace-nowrap">{{ $label }}</h3>
+        <div class="flex-grow h-px bg-border-primary-light dark:bg-border-primary-dark"></div>
+    </div>
+    <div class="space-y-6">
+    {{ range $subs }}
+    {{ $sublabel := .label }}
+    {{ $items := where $certs "category" .key }}
+    {{ if $items }}
+    <div>
+        {{ if $sublabel }}<h4 class="text-xs font-medium uppercase tracking-wider mb-3 text-text-secondary-light dark:text-text-secondary-dark opacity-70">{{ $sublabel }}</h4>{{ end }}
+        <div class="space-y-6">
+{{ range $items }}
+<div class="pl-4 border-l-2 border-gray-700 hover:border-accent-light dark:hover:border-accent-dark transition-colors duration-300">
+<h4 class="text-xl font-bold flex items-center gap-2">
+{{ .title }}
+{{ if .url }}
+<a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white">
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+</a>
+{{ end }}
+</h4>
+<p class="text-gray-500 text-xs uppercase tracking-wider">{{ .date }}</p>
+</div>
+{{ end }}
+</div>
+    </div>
+    {{ end }}
+    {{ end }}
+    </div>
+</div>
+{{ end }}
+{{ end }}
+</div>
         </section>
         {{ end }}
     </div>
@@ -520,4 +536,4 @@ function showToaster(message) {
     }, 3000); 
 }
 </script>
-{{ end }} 
+{{ end }}
