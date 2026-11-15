@@ -46,6 +46,20 @@ institution = "TryHackMe"
 url = "/certificates/THM-KKFHVLG6CF.pdf"
 category = "ctf"
 
+[[certifications]]
+title = "SEC0 - Pre Security"
+date = "14 Nov 2026"
+institution = "TryHackMe"
+url = "/certificates/SEC0.pdf"
+category = "thm"
+
+[[certifications]]
+title = "Pre Security Learning Path"
+date = "14 Nov 2026"
+institution = "TryHackMe"
+url = "/certificates/THM-RI3HJRHLUP.pdf"
+category = "thm-modules"
+
 [[projects]]
 title = "PacketTracer-kde-Login-Fix"
 description = "Solución para los problemas de inicio de sesión de Cisco Packet Tracer en formato AppImage en Arch Linux con KDE Plasma, evitando conflictos entre las bibliotecas Qt de la aplicación y las del sistema."

@@ -97,6 +97,19 @@ institution = "TryHackMe"
 url = "/certificates/THM-KKFHVLG6CF.pdf"
 category = "ctf"
  
+ [[params.certifications]]
+title = "SEC0 - Pre Security"
+date = "14 Nov 2026"
+institution = "TryHackMe"
+url = "/certificates/SEC0.pdf"
+category = "thm"
+
+[[params.certifications]]
+title = "Pre Security Learning Path"
+date = "14 Nov 2026"
+institution = "TryHackMe"
+url = "/certificates/THM-RI3HJRHLUP.pdf"
+category = "thm-modules"
 
 
 # Navegación
