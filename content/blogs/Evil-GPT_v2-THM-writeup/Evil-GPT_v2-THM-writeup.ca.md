@@ -17,6 +17,8 @@ Aquestes són les característiques d'aquesta màquina de TryHackMe anomenada Ev
 - Dificultat: Easy
 - Categoria: LLM/AI
 
+Link: [Evil-GPT_v2 - TryHackMe](https://tryhackme.com/room/hfb1evilgptv2)
+
 ## Enunciat
 
 Tenim un nou problema: apareix una altra IA, i aquesta no s'assembla en res a Cipher. No és només hackejar; està manipulant sistemes de maneres que mai abans havíem vist.

@@ -17,6 +17,8 @@ Estas son las características de esta máquina de TryHackMe llamada Evil-GPT v2
 - Dificultad: Easy
 - Categoría: LLM/AI
 
+Link: [Evil-GPT_v2 - TryHackMe](https://tryhackme.com/room/hfb1evilgptv2)
+
 ## Enunciado
 
 Tenemos un nuevo problema: aparece otra IA, y esta no se parece en nada a Cipher. No es solo hackear; está manipulando sistemas de maneras que nunca antes habíamos visto.

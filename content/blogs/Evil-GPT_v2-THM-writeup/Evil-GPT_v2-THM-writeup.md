@@ -17,6 +17,8 @@ These are the details of this TryHackMe machine called Evil-GPT v2:
 - Difficulty: Easy
 - Category: LLM/AI
 
+Link: [Evil-GPT_v2 - TryHackMe](https://tryhackme.com/room/hfb1evilgptv2)
+
 ## Challenge description
 
 We have a new problem: another AI appears, and this one is nothing like Cipher. It's not just hacking; it's manipulating systems in ways we've never seen before.
