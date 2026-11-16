@@ -1,0 +1,53 @@
+{{ define "main" }}
+
+{{ $current := . }}
+
+<div class="max-w-6xl mx-auto px-4 py-12">
+
+    <h1 class="text-5xl font-bold mb-12 text-text-primary-light dark:text-text-primary-dark">
+        {{ .Title }}
+    </h1>
+
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-10 items-start">
+
+        <aside class="lg:col-span-1">
+            <div class="lg:sticky lg:top-8 border border-border-primary-light dark:border-border-primary-dark rounded-xl p-6 bg-white dark:bg-neutral-800">
+                <h2 class="text-lg font-semibold text-text-primary-light dark:text-text-primary-dark mb-3">
+                    Writeups
+                </h2>
+                <a
+                    href="/writeups/"
+                    class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-md border border-border-primary-light dark:border-border-primary-dark text-accent-light dark:text-accent-dark hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors duration-200"
+                >
+                    Ver writeups →
+                </a>
+            </div>
+        </aside>
+
+        <div class="lg:col-span-3">
+
+            <div class="flex flex-wrap gap-2 mb-12">
+                {{ range .Site.Taxonomies.tags.Alphabetical }}
+                {{ $active := eq .Page.RelPermalink $current.RelPermalink }}
+                <a
+                    href="{{ .Page.RelPermalink }}"
+                    class="px-3 py-1 text-xs border rounded-md transition-colors duration-200 {{ if $active }}text-text-primary-light dark:text-text-primary-dark border-accent-light dark:border-accent-dark bg-bg-secondary-light dark:bg-neutral-800{{ else }}bg-bg-primary-light dark:bg-bg-tertiary-dark text-text-secondary-light dark:text-text-secondary-dark border-border-primary-light dark:border-border-primary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark{{ end }}"
+                >
+                    {{ .Page.LinkTitle }}
+                </a>
+                {{ end }}
+            </div>
+
+            <div class="space-y-12">
+                {{ range where .Pages "Language.Lang" .Language.Lang }}
+                {{ partial "post-card.html" . }}
+                {{ end }}
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{{ end }}
