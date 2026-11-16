@@ -3,7 +3,7 @@ date = '2026-11-06T09:31:27+01:00'
 draft = false
 title = 'Neighbour THM Writeup'
 summary = 'Writeup de la màquina Neighbour de TryHackMe'
-tags = ["THM", "web", "writeup", "IDOR"]
+tags = ["THM", "web", "writeup", "IDOR", "Red-Team"]
 +++
 
 ![Logo de la màquina Neighbour](/images/writeups/TryHackMe_imágenes/Neighbour-THM-imágenes/Neighbour_logo.png)

@@ -3,7 +3,7 @@ date = '2026-11-09T09:33:57+01:00'
 draft = false
 title = 'CyberHeroes THM Writeup'
 summary = 'Writeup de la máquina CyberHeroes de TryHackMe'
-tags = ["THM", "web", "writeup", "authentication-bypass", "client-side"]
+tags = ["THM", "web", "writeup", "authentication-bypass", "client-side", "Red-Team"]
 +++
 
 

@@ -3,7 +3,7 @@ date = '2026-11-12T09:54:15+01:00'
 draft = false
 title = 'Evil-GPT v2 THM Writeup'
 summary = 'Writeup of the TryHackMe machine Evil-GPT v2'
-tags = ["THM", "LLM", "PromptInjection", "writeup"]
+tags = ["THM", "LLM", "PromptInjection", "writeup", "Red-Team"]
 +++
 
 ![Evil-GPT v2 logo](/images/writeups/TryHackMe_imágenes/Evil-GPT_v2-THM-imágenes/Evil-GPT_v2_logo.png)
