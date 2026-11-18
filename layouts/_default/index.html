@@ -168,7 +168,6 @@
             {{ range first 2 . }}
             <div class="project-card relative overflow-hidden rounded-lg bg-[#121212] border border-gray-700 transition-all duration-300 group">
                 <div class="aspect-w-16 aspect-h-9 overflow-hidden relative">
-                    <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 z-10"></div>
                     <img src="{{ .image }}" alt="{{ .title }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-60 z-20"></div>
                     
@@ -423,8 +422,8 @@
     flex-direction: column;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    background: linear-gradient(to bottom right, rgba(30, 41, 59, 0.5), rgba(30, 41, 59, 0.8));
-    backdrop-filter: blur(10px);
+    background: #121212;
+    backdrop-filter: blur(10px); 
 }
 
 .project-card:hover {
@@ -482,7 +481,7 @@
 }
 
 footer {
-    background: linear-gradient(to bottom, transparent, rgba(17, 24, 39, 0.5));
+    background: linear-gradient(to bottom, transparent, rgba(254, 254, 254, 0.5));
 }
 
 /* Toaster styles */

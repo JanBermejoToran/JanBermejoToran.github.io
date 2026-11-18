@@ -1,0 +1,14 @@
+<!-- Footer -->
+<footer class="mt-32 text-center">
+    <div class="max-w-3xl mx-auto">
+        <div class="border-t border-border-primary-light dark:border-border-primary-dark pt-5">
+            <div class="flex flex-col items-center justify-center gap-2">
+                {{ $authorData := index site.Data .Language.Lang "author" }}
+                {{ $author := cond (and $authorData $authorData.author) $authorData.author site.Params }}
+                {{ with $author }}
+                <p class="text-text-secondary-light dark:text-text-secondary-dark text-xm pb-12">© {{ now.Format "2006" }} {{ .name }}</p>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</footer>
