@@ -16,6 +16,7 @@ Estas son las características de esta máquina de TryHackMe llamada The Sticker
 - Máquina: The Sticker Shop
 - Dificultad: Easy
 - Categoría: Web
+- Duración estimada: 120 minutos
 
 Link: [The Stiker Shop - TryHackMe](https://tryhackme.com/room/thestickershop)
 

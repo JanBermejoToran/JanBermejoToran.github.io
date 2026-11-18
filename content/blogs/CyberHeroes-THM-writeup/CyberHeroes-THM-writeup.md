@@ -17,6 +17,7 @@ These are the details of this TryHackMe machine called CyberHeroes:
 - Machine: CyberHeroes
 - Difficulty: Easy
 - Category: Web
+- Estimated time: 15 minutes
 
 Link: [CyberHeroes - TryHackMe](https://tryhackme.com/room/cyberheroes)
 

@@ -16,6 +16,7 @@ These are the details of this TryHackMe machine called Evil-GPT v2:
 - Machine: Evil-GPT v2
 - Difficulty: Easy
 - Category: LLM/AI
+- Estimated time: 20 minutes
 
 Link: [Evil-GPT_v2 - TryHackMe](https://tryhackme.com/room/hfb1evilgptv2)
 

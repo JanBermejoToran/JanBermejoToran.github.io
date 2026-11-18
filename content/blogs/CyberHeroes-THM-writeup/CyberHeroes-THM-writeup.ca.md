@@ -17,6 +17,7 @@ Aquestes són les característiques d'aquesta màquina de TryHackMe anomenada Cy
 - Màquina: CyberHeroes
 - Dificultat: Easy
 - Categoria: Web
+- Durada estimada: 15 minuts
 
 Link: [CyberHeroes - TryHackMe](https://tryhackme.com/room/cyberheroes)
 

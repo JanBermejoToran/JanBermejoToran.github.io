@@ -16,6 +16,7 @@ These are the characteristics of this TryHackMe machine called The Sticker Shop:
 - Machine: The Sticker Shop
 - Difficulty: Easy
 - Category: Web
+- Estimated time: 120 minutes
 
 Link: [Yhe Stiker Shop - TryHackMe](https://tryhackme.com/room/thestickershop)
 

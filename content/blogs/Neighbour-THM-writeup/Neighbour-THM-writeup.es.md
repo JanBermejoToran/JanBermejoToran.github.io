@@ -16,6 +16,7 @@ Estas son las características de esta máquina de TryHackMe llamada Neighbour:
 - Máquina: Neighbour
 - Dificultad: Easy
 - Categoría: Web
+- Duración estimada: 4 minutos
 
 Link: [Neighbour - TryHackMe](https://tryhackme.com/room/neighbour)
 

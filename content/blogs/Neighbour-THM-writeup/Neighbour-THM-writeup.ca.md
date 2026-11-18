@@ -16,6 +16,7 @@ Aquestes són les característiques d'aquesta màquina de TryHackMe anomenada Ne
 - Màquina: Neighbour
 - Dificultat: Easy
 - Categoria: Web
+- Durada estimada: 4 minuts
 
 Enllaç: [Neighbour - TryHackMe](https://tryhackme.com/room/neighbour)
 

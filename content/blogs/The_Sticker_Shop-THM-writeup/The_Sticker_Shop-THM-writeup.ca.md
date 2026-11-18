@@ -16,6 +16,7 @@ Aquestes són les característiques d'aquesta màquina de TryHackMe anomenada Th
 - Màquina: The Sticker Shop
 - Dificultat: Easy
 - Categoria: Web
+- Durada estimada: 120 minuts
 
 Link: [The Stiker Shop - TryHackMe](https://tryhackme.com/room/thestickershop)
 

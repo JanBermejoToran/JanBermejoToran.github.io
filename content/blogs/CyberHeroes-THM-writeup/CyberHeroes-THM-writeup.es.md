@@ -17,6 +17,7 @@ Estas son las características de esta máquina de TryHackMe llamada CyberHeroes
 - Máquina: CyberHeroes
 - Dificultad: Easy
 - Categoría: Web
+- Duración estimada: 15 minutos
 
 Link: [CyberHeroes - TryHackMe](https://tryhackme.com/room/cyberheroes)
 

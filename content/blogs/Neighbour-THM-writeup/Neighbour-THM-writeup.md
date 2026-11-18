@@ -16,6 +16,7 @@ These are the details of this TryHackMe machine called Neighbour:
 - Machine: Neighbour
 - Difficulty: Easy
 - Category: Web
+- Estimated time: 4 minutes
 
 Link: [Neighbour - TryHackMe](https://tryhackme.com/room/neighbour)
 

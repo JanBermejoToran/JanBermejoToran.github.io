@@ -16,6 +16,7 @@ Aquestes són les característiques d'aquesta màquina de TryHackMe anomenada Ev
 - Màquina: Evil-GPT v2
 - Dificultat: Easy
 - Categoria: LLM/AI
+- Durada estimada: 20 minuts
 
 Link: [Evil-GPT_v2 - TryHackMe](https://tryhackme.com/room/hfb1evilgptv2)
 
