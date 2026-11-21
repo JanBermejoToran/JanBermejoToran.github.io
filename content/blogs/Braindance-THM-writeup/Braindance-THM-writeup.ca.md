@@ -1,6 +1,6 @@
 +++
 date = '2026-11-20T16:23:10+01:00'
-draft = true
+draft = false
 title = 'Braindance THM Writeup'
 summary = 'Writeup de Braindance de TryHackMe'
 tags = ["THM", "web", "writeup"]
