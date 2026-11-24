@@ -1,0 +1,51 @@
+{{ define "main" }}
+<div class="w-full md:w-4/5 lg:w-3/5 mx-auto px-14 py-12">
+    <section class="max-w-3xl ml-0 p-6 border border-border-primary-light dark:border-border-primary-dark rounded-lg bg-bg-secondary-light dark:bg-bg-secondary-dark shadow-lg">
+
+        <p class="font-mono text-sm text-text-secondary-light dark:text-text-secondary-dark mb-6">
+            <span class="text-accent-light dark:text-accent-dark">$</span> cd <span data-path></span><br>
+            bash: cd: <span data-path></span>: No such file or directory
+        </p>
+
+        <h1 class="text-4xl font-bold mb-2 text-text-primary-light dark:text-text-primary-dark">404</h1>
+
+        <div data-lang="en">
+            <p class="text-xl mb-6 text-text-primary-light dark:text-text-primary-dark">This page doesn't exist or has been moved.</p>
+            <div class="flex flex-wrap gap-3">
+                <a href="{{ "/" | absURL }}" class="px-4 py-2 text-sm rounded-md text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark bg-bg-tertiary-light dark:bg-bg-tertiary-dark border border-border-secondary-light dark:border-border-secondary-dark hover:border-border-primary-light dark:hover:border-border-primary-dark transition-all">Home</a>
+                <a href="{{ "/blogs/" | absURL }}" class="px-4 py-2 text-sm rounded-md text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark bg-bg-tertiary-light dark:bg-bg-tertiary-dark border border-border-secondary-light dark:border-border-secondary-dark hover:border-border-primary-light dark:hover:border-border-primary-dark transition-all">Blog</a>
+            </div>
+        </div>
+
+        <div data-lang="es" hidden>
+            <p class="text-xl mb-6 text-text-primary-light dark:text-text-primary-dark">Esta página no existe o se ha movido.</p>
+            <div class="flex flex-wrap gap-3">
+                <a href="{{ "/es/" | absURL }}" class="px-4 py-2 text-sm rounded-md text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark bg-bg-tertiary-light dark:bg-bg-tertiary-dark border border-border-secondary-light dark:border-border-secondary-dark hover:border-border-primary-light dark:hover:border-border-primary-dark transition-all">Inicio</a>
+                <a href="{{ "/es/blogs/" | absURL }}" class="px-4 py-2 text-sm rounded-md text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark bg-bg-tertiary-light dark:bg-bg-tertiary-dark border border-border-secondary-light dark:border-border-secondary-dark hover:border-border-primary-light dark:hover:border-border-primary-dark transition-all">Blog</a>
+            </div>
+        </div>
+
+        <div data-lang="ca" hidden>
+            <p class="text-xl mb-6 text-text-primary-light dark:text-text-primary-dark">Aquesta pàgina no existeix o s'ha mogut.</p>
+            <div class="flex flex-wrap gap-3">
+                <a href="{{ "/ca/" | absURL }}" class="px-4 py-2 text-sm rounded-md text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark bg-bg-tertiary-light dark:bg-bg-tertiary-dark border border-border-secondary-light dark:border-border-secondary-dark hover:border-border-primary-light dark:hover:border-border-primary-dark transition-all">Inici</a>
+                <a href="{{ "/ca/blogs/" | absURL }}" class="px-4 py-2 text-sm rounded-md text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark bg-bg-tertiary-light dark:bg-bg-tertiary-dark border border-border-secondary-light dark:border-border-secondary-dark hover:border-border-primary-light dark:hover:border-border-primary-dark transition-all">Blog</a>
+            </div>
+        </div>
+
+    </section>
+</div>
+
+<script>
+    (function () {
+        var m = location.pathname.match(/^\/(es|ca)(\/|$)/);
+        var lang = m ? m[1] : 'en';
+        document.querySelectorAll('[data-lang]').forEach(function (e) {
+            e.hidden = e.dataset.lang !== lang;
+        });
+        document.querySelectorAll('[data-path]').forEach(function (e) {
+            e.textContent = location.pathname;
+        });
+    })();
+</script>
+{{ end }}
