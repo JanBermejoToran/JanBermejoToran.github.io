@@ -68,6 +68,11 @@ image = "/images/projects/kdevspt.png"
 link = "https://github.com/JanBermejoToran/PacketTracer-kde-Login-Fix"
 
 
-
+[[projects]]
+title = "Termsg"
+description = "Xat TCP per terminal escrit en Python, amb instal·lador compatible amb diverses distribucions Linux (inclòs PEP 668 a Arch Linux)."
+tech = "Python, TCP, Bash"
+image = "/images/projects/termsg.png"
+link = "https://github.com/JanBermejoToran/Termsg"
 
 

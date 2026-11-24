@@ -67,3 +67,9 @@ tech = "Bash, Packet Tracer"
 image = "/images/projects/kdevspt.png"
 link = "https://github.com/JanBermejoToran/PacketTracer-kde-Login-Fix"
 
+[[projects]]
+title = "Termsg"
+description = "Chat TCP por terminal escrito en Python, con instalador compatible con varias distribuciones Linux (incluido PEP 668 en Arch Linux)."
+tech = "Python, TCP, Bash"
+image = "/images/projects/termsg.png"
+link = "https://github.com/JanBermejoToran/Termsg"
