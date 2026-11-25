@@ -11,3 +11,12 @@ description = "Terminal TCP chat written in Python, with an installer compatible
 tech = "Python, TCP, Bash"
 image = "/images/projects/termsg.png"
 link = "https://github.com/JanBermejoToran/Termsg"
+
+
+
+[[projects]]
+title = "fastfetch-age-os"
+description = "Custom fastfetch module that shows how long your Linux system has been installed. A single dependency-free bash script, installable with one curl command."
+tech = "Bash, fastfetch, Linux"
+image = "/images/projects/fastfetch-age-os.png"
+link = "https://github.com/JanBermejoToran/fastfetch-age-os"

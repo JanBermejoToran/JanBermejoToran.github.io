@@ -11,3 +11,10 @@ description = "Chat TCP por terminal escrito en Python, con instalador compatibl
 tech = "Python, TCP, Bash"
 image = "/images/projects/termsg.png"
 link = "https://github.com/JanBermejoToran/Termsg"
+
+[[projects]]
+title = "fastfetch-age-os"
+description = "Módulo personalizado de fastfetch que muestra cuánto tiempo lleva instalado tu sistema Linux. Un único script en bash sin dependencias, instalable con un solo comando curl."
+tech = "Bash, fastfetch, Linux"
+image = "/images/projects/fastfetch-age-os.png"
+link = "https://github.com/JanBermejoToran/fastfetch-age-os"

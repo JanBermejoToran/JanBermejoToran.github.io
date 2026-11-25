@@ -14,3 +14,9 @@ tech = "Python, TCP, Bash"
 image = "/images/projects/termsg.png"
 link = "https://github.com/JanBermejoToran/Termsg"
 
+[[projects]]
+title = "fastfetch-age-os"
+description = "Mòdul personalitzat de fastfetch que mostra quant de temps fa que tens instal·lat el teu sistema Linux. Un únic script en bash sense dependències, instal·lable amb una sola ordre curl."
+tech = "Bash, fastfetch, Linux"
+image = "/images/projects/fastfetch-age-os.png"
+link = "https://github.com/JanBermejoToran/fastfetch-age-os"
