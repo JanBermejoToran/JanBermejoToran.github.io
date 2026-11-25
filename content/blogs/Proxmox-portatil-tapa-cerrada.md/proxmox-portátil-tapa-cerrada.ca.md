@@ -29,7 +29,7 @@ Això passa perquè Proxmox es basa en Debian i utilitza systemd per gestionar d
 
 La configuració rellevant es troba a:
 
-```tmux
+```bash
 /etc/systemd/logind.conf
 ```
 
@@ -46,13 +46,13 @@ Entrem a l'intèrpret d'ordres de Proxmox:
 
 Des d'una consola de Proxmox o per SSH, executem:
 
-```tmux
+```bash
 cat /etc/systemd/logind.conf | grep -E 'HandleLidSwitch|HandleLidSwitchExternalPower'
 ```
 
 Si apareixen línies com aquestes:
 
-```tmux
+```bash
 #HandleLidSwitch=suspend
 #HandleLidSwitchExternalPower=suspend
 #HandleLidSwitchDocked=ignore
@@ -66,14 +66,14 @@ Ara modificarem logind.conf.
 
 Editem el fitxer de configuració:
 
-```tmux
+```bash
 nano /etc/systemd/logind.conf
 ```
 ![Imatge amb les línies descomentades](/images/Proxmox/Tapa_cerrada/Captura_shell_editar_archivo.png)
 
 
 Busquem aquestes línies:
-```tmux
+```bash
 #HandleLidSwitch=suspend
 #HandleLidSwitchExternalPower=suspend
 #HandleLidSwitchDocked=ignore
@@ -83,7 +83,7 @@ Busquem aquestes línies:
 
 
 I les modifiquem perquè quedin així:
-```tmux
+```bash
 HandleLidSwitch=ignore
 HandleLidSwitchExternalPower=ignore
 HandleLidSwitchDocked=ignore
@@ -91,23 +91,23 @@ HandleLidSwitchDocked=ignore
 ![Imatge amb les línies descomentades](/images/Proxmox/Tapa_cerrada/Captura_shell_sin_comentar.png)
 
 La clau és:
-```tmux
+```bash
 ignore
 ```
 
 Amb aquesta configuració indiquem a systemd-logind que **ignori** l'esdeveniment que es produeix en tancar la tapa.
 
 Què significa cada opció?
-```tmux
+```bash
 HandleLidSwitch=ignore
 ```
 Indica què cal fer quan es tanca la tapa normalment.
-```tmux
+```bash
 HandleLidSwitchExternalPower=ignore
 ```
 Fa el mateix quan el portàtil està connectat a l'alimentació, és a dir, quan s'està carregant.
 
-```tmux
+```bash
 HandleLidSwitchDocked=ignore
 ```
 
@@ -119,14 +119,14 @@ Aplicar els canvis
 
 Després de desar el fitxer, podem reiniciar el servei:
 
-```tmux
+```bash
 systemctl restart systemd-logind
 ```
 ![Imatge amb les línies descomentades](/images/Proxmox/Tapa_cerrada/Captura_shell_reinicio_systemd-login.png)
 
 També podríem reiniciar el servidor per assegurar-nos que tota la configuració es carrega des de zero:
 
-```tmux
+```bash
 reboot
 ```
 
@@ -135,13 +135,13 @@ En el meu cas no passa res perquè simplement es reinicia l'equip, però si alg�
 L'ideal seria comprovar després del reinici que la configuració s'ha aplicat.
 
 Podem verificar que les opcions ja no estan comentades executant:
-```tmux
+```bash
 cat /etc/systemd/logind.conf | grep HandleLidSwitch 
 ```
 ![Imatge de la comprovació](/images/Proxmox/Tapa_cerrada/Captura_shell_comprobación.png)
 
 La sortida esperada és:
-```tmux
+```bash
 HandleLidSwitch=ignore
 HandleLidSwitchExternalPower=ignore
 HandleLidSwitchDocked=ignore
@@ -150,14 +150,14 @@ HandleLidSwitchDocked=ignore
 És important comprovar que no aparegui el símbol # al principi de les línies.
 
 Per exemple:
-```tmux
+```bash
 #HandleLidSwitch=ignore
 ```
 
 No estaria activa.
 
 En canvi:
-```tmux
+```bash
 HandleLidSwitch=ignore
 ```
 

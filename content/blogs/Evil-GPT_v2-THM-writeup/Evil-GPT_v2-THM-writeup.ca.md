@@ -36,7 +36,7 @@ MÀQUINA_IP
 
 Com a reconeixement inicial farem un escaneig ràpid de ports, tot i que, tractant-se d'una IA en una màquina de nivell fàcil, probablement sigui una web:
 
-```tmux
+```bash
 [v@blackwall ~]$ nmap -F 10.129.188.141
 Starting Nmap 7.993 ( https://nmap.org ) at 2026-11-12 09:42 +0100
 Nmap scan report for 10.129.188.141
@@ -55,7 +55,7 @@ Nmap done: 1 IP address (1 host up) scanned in 0.67 seconds
 
 Com que `upnp` és només l'etiqueta per defecte del port 5000, llançarem un segon escaneig només contra aquest port per identificar el servei i la seva versió:
 
-```tmux
+```bash
 [v@blackwall vpns]$ nmap -sV -p5000 10.130.156.74
 Starting Nmap 7.993 ( https://nmap.org ) at 2026-11-13 09:35 +0100
 Nmap scan report for 10.130.156.74

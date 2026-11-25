@@ -36,7 +36,7 @@ MACHINE_IP
 
 As initial reconnaissance we are going to run a quick port scan, although, since this is an AI on an easy-level machine, it is most likely a website:
 
-```tmux
+```bash
 [v@blackwall ~]$ nmap -F 10.129.188.141
 Starting Nmap 7.993 ( https://nmap.org ) at 2026-11-12 09:42 +0100
 Nmap scan report for 10.129.188.141
@@ -55,7 +55,7 @@ Nmap done: 1 IP address (1 host up) scanned in 0.67 seconds
 
 Since `upnp` is just the default label for port 5000, we are going to run a second scan against that port only to identify the service and its version:
 
-```tmux
+```bash
 [v@blackwall vpns]$ nmap -sV -p5000 10.130.156.74
 Starting Nmap 7.993 ( https://nmap.org ) at 2026-11-13 09:35 +0100
 Nmap scan report for 10.130.156.74

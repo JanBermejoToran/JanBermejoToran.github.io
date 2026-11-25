@@ -29,7 +29,7 @@ This happens because Proxmox is based on Debian and uses systemd to manage certa
 
 The relevant configuration is located in:
 
-```tmux
+```bash
 /etc/systemd/logind.conf
 ```
 
@@ -46,13 +46,13 @@ Let's open the Proxmox shell:
 
 From a Proxmox console or over SSH, run:
 
-```tmux
+```bash
 cat /etc/systemd/logind.conf | grep -E 'HandleLidSwitch|HandleLidSwitchExternalPower'
 ```
 
 If you see lines like these:
 
-```tmux
+```bash
 #HandleLidSwitch=suspend
 #HandleLidSwitchExternalPower=suspend
 #HandleLidSwitchDocked=ignore
@@ -66,14 +66,14 @@ Now let's modify logind.conf.
 
 Edit the configuration file:
 
-```tmux
+```bash
 nano /etc/systemd/logind.conf
 ```
 ![Image showing the uncommented lines](/images/Proxmox/Tapa_cerrada/Captura_shell_editar_archivo.png)
 
 
 Find these lines:
-```tmux
+```bash
 #HandleLidSwitch=suspend
 #HandleLidSwitchExternalPower=suspend
 #HandleLidSwitchDocked=ignore
@@ -83,7 +83,7 @@ Find these lines:
 
 
 Change them to:
-```tmux
+```bash
 HandleLidSwitch=ignore
 HandleLidSwitchExternalPower=ignore
 HandleLidSwitchDocked=ignore
@@ -91,23 +91,23 @@ HandleLidSwitchDocked=ignore
 ![Image showing the uncommented lines](/images/Proxmox/Tapa_cerrada/Captura_shell_sin_comentar.png)
 
 The key setting is:
-```tmux
+```bash
 ignore
 ```
 
 With this configuration, we're telling systemd-logind to **ignore** the event that occurs when the lid is closed.
 
 What does each option mean?
-```tmux
+```bash
 HandleLidSwitch=ignore
 ```
 Specifies what to do when the lid is closed under normal conditions.
-```tmux
+```bash
 HandleLidSwitchExternalPower=ignore
 ```
 Does the same when the laptop is connected to external power, that is, when it is charging.
 
-```tmux
+```bash
 HandleLidSwitchDocked=ignore
 ```
 
@@ -119,14 +119,14 @@ Apply the changes
 
 After saving the file, we can restart the service:
 
-```tmux
+```bash
 systemctl restart systemd-logind
 ```
 ![Image showing the uncommented lines](/images/Proxmox/Tapa_cerrada/Captura_shell_reinicio_systemd-login.png)
 
 We could also reboot the server to make sure all the configuration is loaded from scratch:
 
-```tmux
+```bash
 reboot
 ```
 
@@ -135,13 +135,13 @@ In my case, this is fine because the machine simply reboots. However, if you do 
 Ideally, after the reboot, check that the configuration has been applied.
 
 We can verify that the options are no longer commented out by running:
-```tmux
+```bash
 cat /etc/systemd/logind.conf | grep HandleLidSwitch 
 ```
 ![Configuration check](/images/Proxmox/Tapa_cerrada/Captura_shell_comprobación.png)
 
 The expected output is:
-```tmux
+```bash
 HandleLidSwitch=ignore
 HandleLidSwitchExternalPower=ignore
 HandleLidSwitchDocked=ignore
@@ -150,14 +150,14 @@ HandleLidSwitchDocked=ignore
 Make sure there is no # at the beginning of the lines.
 
 For example:
-```tmux
+```bash
 #HandleLidSwitch=ignore
 ```
 
 This would not be active.
 
 Whereas:
-```tmux
+```bash
 HandleLidSwitch=ignore
 ```
 

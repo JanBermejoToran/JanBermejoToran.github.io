@@ -37,7 +37,7 @@ I veiem com es descarrega l'arxiu:
 
 Ara que ja el tinc, miraré quin tipus d'arxiu és:
 
-```tmux
+```bash
 file Challenge_1609966715991.Challenge
 ```
 
@@ -45,7 +45,7 @@ file Challenge_1609966715991.Challenge
 
 Veiem que és un executable ELF de 64 bits, així que li done permisos d'execució i l'executo:
 
-```tmux
+```bash
 chmod +x Challenge_1609966715991.Challenge
 ./Challenge_1609966715991.Challenge
 ```
@@ -60,7 +60,7 @@ Bé, veiem com arrenca el programa i ens demana un username. Provo els típics (
 
 Com que endevinar l'usuari no funciona, miraré què porta el programa a dins. Per a això faig servir `strings`, que em treu tot el text llegible del binari:
 
-```tmux
+```bash
 strings Challenge_1609966715991.Challenge
 ```
 
@@ -80,7 +80,7 @@ El més interessant és l'última: `THM{%d%d}` té pinta de ser el format de la 
 
 Amb `strings` no veig el username complet enlloc (`AGB6js5d` i `9dkGf` surten separats, i aquesta `f` del final és un byte de la instrucció següent que `strings` confon amb text), així que toca mirar el codi. Per a això faig servir `objdump`:
 
-```tmux
+```bash
 objdump -d -M intel Challenge_1609966715991.Challenge
 ```
 
@@ -95,7 +95,7 @@ Dins del resultat busque la funció `vuln`, i allí veig vàries instruccions `m
 
 Per exemple, el valor `0x6e6f6e34` es guarda com els bytes `34 6e 6f 6e`, que en ASCII són `4non`. Es pot comprovar per terminal:
 
-```tmux
+```bash
 echo 34 6e 6f 6e | xxd -r -p
 ```
 

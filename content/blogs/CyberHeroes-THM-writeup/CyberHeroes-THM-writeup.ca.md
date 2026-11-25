@@ -39,7 +39,7 @@ Fes un cop d'ull a contingut similar a TryHackMe:
 
 El primer que farem serà un nmap a la IP de la màquina vulnerable:
 
-```tmux
+```bash
 [x@x ~]$ nmap -F 10.128.191.43
 Starting Nmap 7.993 ( https://nmap.org ) at 2026-11-09 09:40 +0100
 Nmap scan report for 10.128.191.43

