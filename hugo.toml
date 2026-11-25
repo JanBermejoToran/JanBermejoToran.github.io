@@ -134,3 +134,12 @@ category = "thm-modules"
     name = "Contact Me"
     url = "/contact/"
     weight = 4
+
+
+
+# Bloques de código sin resaltado de Hugo (mismo fondo que ```tmux)
+
+[markup]
+  [markup.highlight]
+    codeFences = false
+    guessSyntax = false
