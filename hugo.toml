@@ -15,20 +15,26 @@ defaultContentLanguageInSubdir = false
 [languages.en]
 locale = "en-US"
 label = "English"
+[languages.en.params]
+location = "Spain"
+description = "Higher Vocational Degree student in Cybersecurity. Focused on offensive and defensive security, Linux, open source tool development, self-hosting and automation."
+
 
 [languages.es]
 locale = "es-ES"
 label = "Español"
+[languages.es.params]
+location = "España"
+description = "Estudiante de Grado Superior en Ciberseguridad. Enfocado en seguridad ofensiva y defensiva, Linux, desarrollo de herramientas open source, self-hosting y automatización."
 
 [languages.ca]
 locale = "ca-ES"
 label = "Català"
-
+[languages.ca.params]
+location = "Espanya"
+description = "Estudiant de Grau Superior en Ciberseguretat. Enfocat en seguretat ofensiva i defensiva, Linux, desenvolupament d'eines open source, self-hosting i automatització."
 #---------------------
 
-# URL
-relativeURLs = true
-canonifyURLs = true
 
 # Taxonomías
 [taxonomies]
