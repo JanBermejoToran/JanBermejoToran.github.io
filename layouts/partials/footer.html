@@ -12,3 +12,40 @@
         </div>
     </div>
 </footer>
+
+<!-- Lightbox -->
+<style>
+  .prose img { cursor: zoom-in; }
+  #lightbox {
+    position: fixed; inset: 0; z-index: 9999;
+    display: none; align-items: center; justify-content: center;
+    background: rgba(0,0,0,.9); cursor: zoom-out;
+  }
+  #lightbox.open { display: flex; }
+  #lightbox img {
+    max-width: 95vw; max-height: 95vh; object-fit: contain;
+    border-radius: 8px; transform: scale(.92); opacity: 0;
+    transition: transform .25s ease, opacity .25s ease;
+  }
+  #lightbox.open img { transform: scale(1); opacity: 1; }
+</style>
+
+<div id="lightbox" role="dialog" aria-modal="true"><img alt=""></div>
+
+<script>
+  (function () {
+    var lb = document.getElementById('lightbox');
+    var big = lb.querySelector('img');
+    function close() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+    document.querySelectorAll('.prose img').forEach(function (img) {
+      img.addEventListener('click', function () {
+        big.src = img.currentSrc || img.src;
+        big.alt = img.alt;
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    lb.addEventListener('click', close);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  })();
+</script>
